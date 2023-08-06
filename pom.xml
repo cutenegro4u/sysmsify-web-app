@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Sysmsify Technologies Releases Nexus Repository</name>
-	      <url>http://52.15.136.36:8081/repository/sysmsifybackup/</url>
+	      <url>http://18.119.125.47:8081/repository/sysmsifybackup/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Sysmsify Technologies Snapshot Nexus Repository </name>
-	      <url>http://52.15.136.36:8081/repository/sysmsifysnapshot/</url>
+	      <url>http://18.119.125.47:8081/repository/sysmsifysnapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
