@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+
+    environment {
+        MVN_HOME = 'maven 3.9.4'
+    }
+
+    stages {
+        stage('Clone Code') {
+            steps {
+                echo 'We are about to clone'
+                git branch: 'main', url: 'https://github.com/cutenegro4u/sysmsify-web-app.git'
+                echo 'The clone was successful'
+            }
+        }
+
+        stage('Build Artifact') {
+            steps {
+                echo 'We are about to build or run mvn package'
+                sh "${tool env.MVN_HOME}/bin/mvn package"
+                echo 'The build was successful'
+            }
+        }
+
+        stage('SonarQube analysis') {
+            steps {
+                echo 'Running SonarQube analysis'
+                withSonarQubeEnv('SonarQube') {
+                    sh "${tool env.MVN_HOME}/bin/mvn sonar:sonar"
+                }
+                echo 'SonarQube analysis completed'
+            }
+        }
+
+        stage('Deploy Artifact') {
+            steps {
+                echo 'Deploying Artifact'
+                sh "${tool env.MVN_HOME}/bin/mvn deploy"
+                echo 'Artifact deployment completed'
+            }
+        }
+    }
+}
