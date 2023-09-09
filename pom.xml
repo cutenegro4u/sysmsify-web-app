@@ -97,13 +97,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Sysmsify Technologies Releases Nexus Repository</name>
-	      <url>http://3.142.52.122:8081/repository/sysmsifyrelease/</url>
+	      <url>http://3.142.52.122:8081/repository/myapprelease/</url>
 	    </repository>
 	    
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Sysmsify Technologies Snapshot Nexus Repository </name>
-	      <url>http://3.142.52.122:8081/repository/symsifysnapshot/</url>
+	      <url>http://3.142.52.122:8081/repository/myappsnapshot/</url>
 	    </snapshotRepository>
 	    
 	</distributionManagement>
